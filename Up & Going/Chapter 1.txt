@@ -1,0 +1,45 @@
+Chapter 1: Into Programming
+
+
+Code: Tells the computer what to do
+Statements: a group of words, numbers, and operators that perform a task
+  ex. a = b*2; value of b multiplied by 2 then assigned to a
+Expressions:  a statement is made up of one or more expressions
+  ex. 2 - value expression
+      b - variable expression
+      b * 2 - arithmetic expression
+      a = b * 2 - assignment expression
+Executing a Program:  running the program by using an interpreter or a compiler
+Try It Yourself:  Shortcut to most Developer Tools Console is Ctrl + Shift + I; You can also press F12
+Output: printed text that the user can see
+  ex. console.log() to send output to the console
+      alert() to pop up a window
+Input:  receiving information from the user
+  ex. prompt() to pop up a window that asks for a user to input information
+Operators: performs actions on variables and values
+  ex. Assignment: = as in a = 2
+      Math:  + addition; - subtraction;  * multiplication; / division; as in a*2
+      Compound Assignment: +=; -=; *=; /=; combines math operators with assignment as in a += 2 (same as a = a + 2)
+      Increment/Decrement: ++ increment;  -- decrement;  as in a++ similar to a = a + 1
+      Object Property Access: . as in console.log()
+      Equality:  == loose-equals; === strict equals;  != loose not-equal; !== strict not-equals;  as in a == b
+      Comparison: < less than;  > greater than; <= less than or loose-equals;  >= greater than or loose-equals; as in a <= b
+      Logical:   && and;  || or;  as in a || b that selects either a OR b
+Values & Types:
+      When you need to do math, you want a number
+      When you need to print a value on the screen, you need a string (one ore more characters, words, sentences)   "I am a string";  'I am also a string'
+      When you need to make a decision in your program, you need a boolean (true or false).   true; false;
+Converting Between Types: You can convert numbers into strings and vice versa (aka coercion)
+  ex. var a = "42";
+      var b = Number(a);
+      console.log(a); <- "42"
+      console.log b;  <- 42
+Code Comments:  text inserted by the programmer to explain things to other programmers by using // or /*. Only seen when looking at the raw code
+  ex. // This is a single line comment
+      /* But this is
+          a multiline
+                comment.
+                        */
+      Code without comments is suboptimal
+      Too many comments (one per line for example) is probably a sign of poorly written code
+      Comments should explain why, not what. They can optionally explain how if that's particularly confusing
