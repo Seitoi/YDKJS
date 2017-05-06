@@ -129,7 +129,7 @@ Functions: a named section of code that can be "called" by name which will run t
           amount = finalPurchaseAmount(amount);
           console.log(amount.toFixed(2));     // 107.99
 Scope: a collection of variables as well as the rules for how those variables are accessed by name
-  Only code inside the fuction can access that function's scoped variables.
+  Only code inside the function can access that function's scoped variables.
     ex. function one(){
             var a = 1;
             console.log (a);
@@ -141,39 +141,3 @@ Scope: a collection of variables as well as the rules for how those variables ar
         one();    // 1
         two();    // 2
   Scopes can be nested. Lexical scope rule - one scope can asccess variables of either current function or outside of it
-
-  PRACTICE~~
-const TAX_RATE = 0.08
-const PHONE_PRICE = 99.99;
-const ACCESSORY = 9.99;
-const MAX_SPENDING = 150;
-var bank_money
-
-bank_money = prompt("What is your total worth?");
-
-var amount = 0
-
-function totalTax(amount){
-	return amount * TAX_RATE;
-}
-
-function formatAmount(amount){
-	return "$" + amount.toFixed(2);
-}
-
-while (amount < bank_money){
-	amount = amount + PHONE_PRICE;	//buy the phone
-
-		if(amount <	MAX_SPENDING){
-			amount = amount + ACCESSORY;
-        }
-}
-
-
-amount = amount + totalTax(amount);		//taxes
-
-console.log( "Your purchase: " + formatAmounmt(amount));
-
-if (amount > bank_money){
-	alert("Sorry, you're broke son")
-}
