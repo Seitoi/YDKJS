@@ -1,0 +1,74 @@
+[Chapter 1]
+
+What is scope?
+  set of rules for storing variables in some locations and for finding those variables at a later time
+
+Is JS a compiled or interpreted language?
+  A compiled language.
+
+What are the three steps of compilation?
+  Tokenizing/Lexing
+  Parsing
+  Code-Generation
+
+What is tokenizing?
+  breaking up a string of characters into meaningful chunks
+
+What is Parsing?
+   taking a stream (array) of tokens and turning it into a tree of nested elements, which represents the grammatical structure of the program
+
+What is Code-Generation?
+  process of taking an AST(Abstract Syntax Tree) and turning it into executable code
+
+What is a RHS look-up?
+  find the value of the variables
+
+What is a LHS look-up?
+  find the variable container
+
+If a variable cannot be found in the immediate scope, what does Engine do?
+  Checks the next outer scope
+
+What does ReferenceError imply?
+  RHS look-up failed to find a varaible, anywhere in the nested scropes
+
+What does TypeError imply?
+  Scope resolution was successful(finds the variable) but there was an illegal/impossible actions attempted
+
+[Chapter 2]
+
+What are the two predominant models for how scope works?
+  Lexical Scope
+  Dynamic scope
+
+What is lexical scope?
+  Based on where variables and blocks of scopes are authored, by you, at write time, and this is set in stone(mostly) by the time the lexer processess your code
+  Scope that is defined at a lexing time
+
+When does scope look-up stop?
+  Once it finds the first match
+
+What is "shadowing"?
+  The same identifier name can be specified at multiple layers of nested scope
+
+[Chapter 3]
+
+How do you distinguish between a function declaration and a function expression?
+
+What does 'let' do?
+
+Are 'let' declarations hoisted?
+
+[Chapter 4]
+
+Which are hoisted first, function declarations or variable declarations?
+
+What happens to duplicate var declarations?
+
+What happens to duplicate function declarations?
+
+[Chapter 5]
+
+Closure is...
+
+Modules require two key characteristics:
