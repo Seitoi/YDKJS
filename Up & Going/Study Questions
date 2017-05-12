@@ -1,0 +1,135 @@
+
+YDKJS BOOK 1
+--------------
+
+[Chapter 1]
+
+What is a program?
+  code, a set of special instructions that tell the computer what to do
+
+What is a computer language?
+  syntax, rules for valid format and combinations of instructions
+
+What is a statement?
+  A group of words, numbers, and operators that perform a task
+
+What is a variable?
+  simple boxes that you can store any of your stuff in. They store values to be used by the program
+
+What is an expression?
+Any reference to a variable or value combined with operators
+
+Name the expressions in the statement: a = b * 2;
+  Assignment expression
+
+What is an expression statement?
+  an expression that stands alone, ex. b * 2
+
+Interpreting the code is when ______________________________
+  computer languages translate the code line by line, each time the program is running
+
+Compiling is when ________________________
+  A language translates the code BEFORE it is running
+
+What is an operator?
+  they perform actions on variables and values. Think math and Conditionals
+
+What is are objects?
+  values that hold other values at specific named locations called properties
+
+What are types?
+  Different representations for values, ex number, string, boolean
+
+What is a literal value?
+  Values that are included directly in the source code
+
+In JS, coercion is _________________.
+  When you convert between values. Ex value to string, string to a number
+
+The primary purpose of variables is _______________________.
+  To track a value as it changes (if it does) throughout the program.
+
+What is state?
+  Tracking the changes to values as your program runs
+
+What is a block?  How is a block defined in JS?
+  A group of statements together usually inside {} and followed after and 'if' statement
+
+Conditionals are also know as _______________.
+  Decisions
+
+What is the job of a loop?
+  Repeating a set of actions while the condition holds.
+
+What is an iteration?
+  Each time the loop block executes
+
+A for loop has three clauses, which are: _________________________.
+  initialization clause ( var i = 0 )
+  conditional test clause ( i <= 9 )
+  update clause ( i = i + 1 )
+
+What is a function?
+  A section of code that can be called by name which will run the code inside
+
+What is an argument (aka parameter)?
+  values you pass in
+
+[Chapter 2]
+
+What are the built-in types available in JS?
+  string
+  number
+  boolean
+  null and undefined
+  object
+  symbol
+
+What is a property?
+  named locations
+
+Bracket notation is useful if _______________;
+  you have a property name that has special characters in it. ex obj["hello world!"]
+
+What are the two main types of value comparison?
+  Equality and Inequality
+
+The result of any comparison is ____________.
+  boolean value (true or false)
+
+What is explicit coercion?
+  You can see the conversion in the code
+
+What is implicit coercion?
+  happens as non-obvious side effect of some other operation
+
+List the 'falsy' values in JavaScript:
+  " " empty string
+  0. -0, NaN (invalid number)
+  null undefined
+  false
+
+What is the difference between == and ===?
+  == checks for value equality with coercion allowed
+  === strict equality, no coercion allowed
+
+In JS, variable names (including function names) must be valid __________.
+  identifiers, a-z, A -Z, $, _
+
+An identifier must start with (    ), (     ), ( ), or (  ).
+
+What is hoisting?
+  declaration is taken to belong to the entire scope and accessible everywhere
+
+A function value should be thought of as an ____________.
+  expression
+
+You can think of closure as a way to _____________________________.
+  "remember" and continue to access a function's scope
+
+What is a module?
+  let's you define private implementation details that are hidden from the outside world, as well as public API that is
+  accessible from the outside
+
+What is transpiling?
+  converts your newer code into older code equivalents
