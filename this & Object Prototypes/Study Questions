@@ -1,0 +1,184 @@
+[Chapter 1]
+
+
+`this` is not an author-time binding, but a ________ binding
+
+`this` is actually a binding that is made when ____________________
+
+What `this` references is determined by _________________________
+
+
+[Chapter 2]
+
+
+Define: call-site
+
+Define: call-stack
+
+Variables declared in the global scope are synonymous with _____________________
+
+
+A 'context object' is an object that owns or "contains" the ________________
+
+
+Only the ______ level of an object property reference chain matters to the call-site
+
+Functions have `call(..)` and `apply(..)` methods which ___________________
+
+The `bind(..)` method returns a new function that _______________________
+
+In JS, constructors are ________________________________
+
+
+Label each statement with the kind of `this` binding:
+
+`var bar = obj1.foo()`   __________ binding
+
+`var bar = new foo()`    ____ binding
+
+`var bar = foo.call(obj2)` ___________ binding
+
+`var bar = foo()` _________ binding
+
+
+[Consider the previous question] What is the order of precedence for `this` binding?
+
+
+If a function is called with `new`, `this` is ________________________
+
+If a function is called with `call`, `apply`, or `bind`, `this` is ________________
+
+If a function is called with a context (aka an owning object), `this` is ____________
+
+If a function is called with none of the above and in `strict mode`, `this` is _________________
+
+
+If you pass `null` or `undefined` as a binding parameter to `call(..)`, `apply(..)`, or `bind(..)`, what happens?
+
+
+Arrow-functions adopt the `this` binding from _____________________________
+
+
+
+[Chapter 3]
+
+
+Objects come in two forms, the ____________ form and the ____________ form
+
+List out the built-in objects (aka object subtypes) in JavaScript:
+
+
+It is strongly preferred by the majority of the JS community to use the ____________ form for a value, where possible, rather than the ______________ object form.
+
+What is the main difference between the `.` and `[..]` property access syntax?
+
+"Function" and ___________ are interchangeable in JavaScript
+
+Arrays assume numeric indexing, which means that values are stored in locations, usually called _____________ at non-negative _______________
+
+What method can you use to make a shallow copy of an object(s)?
+
+As of ES5, all properties are described in terms of a _____________________
+
+We can use `Object.defineProperty(..)` to...
+
+`writable: true` means you can...
+
+`configurable: false` means...    Can you set it back to true?
+
+Define: `delete`
+
+What does `enumerable` control?
+
+Define: Getters / Setters
+
+How does a property's descriptor become an "accessor descriptor"?
+
+What is the difference between accessor descriptors and data descriptors?
+
+When you get value from an object's property, the default built-in ________ operation is performed.
+
+If the (above) operation cannot through any means come up with a value for the requested property, it instead returns _______________.
+
+There's also an internally defined ________ operation for setting or creating a property on an object.
+
+
+What is the difference between the `in` operator and the `hasOwnProperty(..)` method?
+
+`Object.keys(..)` returns...
+
+`Object.getOwnPropertyNames(..)` returns...
+
+You can iterate over the values in data structures (arrays, objects, etc) using the ES6 _________________.
+
+
+
+[Chapter 4]
+
+
+Define: Class
+
+Define: Inheritance
+
+Define: Instantiation
+
+What does polymorphism describe?
+
+Does JS have classes?
+
+Instances of a class are constructed by a special method of the class, called a ______________
+
+True or False?:  A child class is linked to its parent class.
+
+Why does JS not automatically perform copy behavior when you "inherit" or "instantiate"?
+
+Since JS functions can't really be duplicated, what do you end up with when you "copy" functions?
+
+
+
+
+[Chapter 5]
+
+Objects in JS have an internal property, [[Prototype]], which is...
+
+The [[Prototype]] chain is consulted when _____________________________
+
+
+The top-end of every normal [[Prototype]] chain is the built-in ________________
+
+
+All functions by default, get a public, non-enumerable property on them called ______________, which points at _______________________________
+
+In JS, we don't make copies from one object to another.  Instead we ___________________________
+
+The keyword `new` sort of hijacks any normal function and calls it in a fashion that constructs an ___________, in addition to _________________________________
+
+In JS, it's most appropriate to say that a "constructor" is _________________________________________________
+
+True or False:  .constructor means "was constructed by"
+
+What does `Object.create(..)` do?
+
+Define: Introspection
+
+The `instanceof` operator takes a _________________ as it's left-hand operand and a _____________ as it's right-hand operand.
+
+
+Consider:  `b.isPrototypeOf( c );`
+
+	What is the question that `isPrototypeOf(..)` answers?
+
+
+We can use Object._________________ to directly retrieve the [[Prototype]] of an object.
+
+
+
+[Chapter 6]
+
+What is the [[Prototype]] mechanism?
+
+What is `super` used for?
+
+Define: OLOO
+
+Define:  Behavior Delegation
