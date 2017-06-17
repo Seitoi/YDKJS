@@ -54,21 +54,28 @@ What is "shadowing"?
 [Chapter 3]
 
 How do you distinguish between a function declaration and a function expression?
+  If "function" is the very first thing in the statement, then its a function declaration. Otherwise, it's a function expression.
 
 What does 'let' do?
+  The 'let' keyword attaches the variable declaration to the scope of whatever it's contained in. It implicitly hijacks any block's scope for its variable declaration.
 
 Are 'let' declarations hoisted?
+  No. It will not exist in the block until after the declaration statement.
 
 [Chapter 4]
 
 Which are hoisted first, function declarations or variable declarations?
-
+  The function declaration comes before the variable declaration. JS compiles the code as it's executed.
 What happens to duplicate var declarations?
 
 What happens to duplicate function declarations?
+  function declarations do override previous ones. It's a really bad idea and would lead to confusing results.
 
 [Chapter 5]
 
 Closure is...
+  all around you in JS, you just have to recognize and embrace it. Closures happen as a result of writing code that relies on lexical scope. You do not have to intentionally create closures. They are created and used all over your code.
 
 Modules require two key characteristics:
+  1) an outer wrapping function being invoked, to create the enclosing scope
+  2) the return value of the wrapping function must include reference to at least one inner function that then has closure over the private inner scope of the wrapper.
