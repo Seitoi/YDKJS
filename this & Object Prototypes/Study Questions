@@ -2,183 +2,246 @@
 
 
 `this` is not an author-time binding, but a ________ binding
+	runtime binding
 
 `this` is actually a binding that is made when ____________________
+	a function is invoked
 
 What `this` references is determined by _________________________
-
+	 the call-site where the function is called.
 
 [Chapter 2]
 
 
 Define: call-site
+	The location in code where a function is called (not where it's declared)
 
 Define: call-stack
+	the stack of functions that have been called to get us to the current moment in execution
 
 Variables declared in the global scope are synonymous with _____________________
-
+	global-object properties of the same name
 
 A 'context object' is an object that owns or "contains" the ________________
-
+		object
 
 Only the ______ level of an object property reference chain matters to the call-site
+	top/last
 
 Functions have `call(..)` and `apply(..)` methods which ___________________
+		they both take, as their first parameter, an object to use for the 'this', and then invoke the function with that 'this' specified.
 
 The `bind(..)` method returns a new function that _______________________
+	is hard-coded to call the original function with the 'this' context set as you specified
 
 In JS, constructors are ________________________________
-
+	just functions that happen to be called with the 'new' operator in front of them. Regular functions.
 
 Label each statement with the kind of `this` binding:
 
-`var bar = obj1.foo()`   __________ binding
+`var bar = obj1.foo()`   __________ binding	:	Implicit binding
 
-`var bar = new foo()`    ____ binding
+`var bar = new foo()`    ____ binding	: 	New binding
 
-`var bar = foo.call(obj2)` ___________ binding
+`var bar = foo.call(obj2)` ___________ binding	:	Explicit Binding
 
-`var bar = foo()` _________ binding
+`var bar = foo()` _________ binding	:	 Default binding
 
 
 [Consider the previous question] What is the order of precedence for `this` binding?
 
 
 If a function is called with `new`, `this` is ________________________
+	the newly constructed object
 
 If a function is called with `call`, `apply`, or `bind`, `this` is ________________
+	the explicitly specified object
 
 If a function is called with a context (aka an owning object), `this` is ____________
+	that context object
 
 If a function is called with none of the above and in `strict mode`, `this` is _________________
-
+	the global object
 
 If you pass `null` or `undefined` as a binding parameter to `call(..)`, `apply(..)`, or `bind(..)`, what happens?
-
+	the values are ignored and instead the default binding rule applies
 
 Arrow-functions adopt the `this` binding from _____________________________
-
+		the enclosing (function or global) scope
 
 
 [Chapter 3]
 
 
 Objects come in two forms, the ____________ form and the ____________ form
+	Declarative (literal) form; constructed form
 
 List out the built-in objects (aka object subtypes) in JavaScript:
-
+	1) String
+	2) Number
+	3) Boolean
+	4) Object
+	5) Function
+	6) Array
+	7) Date
+	8) RegExp
+	9) Error
 
 It is strongly preferred by the majority of the JS community to use the ____________ form for a value, where possible, rather than the ______________ object form.
+				Literal form; constructed object form
 
 What is the main difference between the `.` and `[..]` property access syntax?
+	'.' operator requires an 'Identifier' compatible property name after it, whereas the '[]' syntax can take basically any UTF-8/unicode compatible property
+			ex. property name "Super-Fun!"
+					["Super-Fun!"]	- valid
+					.Super-Fun! - not valid
 
 "Function" and ___________ are interchangeable in JavaScript
+	method
 
 Arrays assume numeric indexing, which means that values are stored in locations, usually called _____________ at non-negative _______________
+	indices ; intergers such as 0 and 42
 
 What method can you use to make a shallow copy of an object(s)?
+	object.assign(..)
 
 As of ES5, all properties are described in terms of a _____________________
+	property descriptor
 
 We can use `Object.defineProperty(..)` to...
+	add a new property, or modify an existing one (if it's configurable!)
 
 `writable: true` means you can...
+	change the value of a property
 
 `configurable: false` means...    Can you set it back to true?
+	modify its descriptor definition
 
 Define: `delete`
+	remove an existing property
 
 What does `enumerable` control?
+	controls if a property will show up in a certain object-property enumerations, such as the for..in loop
 
 Define: Getters / Setters
+	Getters are properties which actually call a hidden function to retreive a value. Setters are properties which actually call a hidden function to set a value.
 
 How does a property's descriptor become an "accessor descriptor"?
-
+	When you define a property to have either a getter or a setter, or both, its definition becomes an "accessor descriptor"
 What is the difference between accessor descriptors and data descriptors?
 
 When you get value from an object's property, the default built-in ________ operation is performed.
+	[[Get]]
 
 If the (above) operation cannot through any means come up with a value for the requested property, it instead returns _______________.
+	undefined
 
 There's also an internally defined ________ operation for setting or creating a property on an object.
-
+	[[Put]]
 
 What is the difference between the `in` operator and the `hasOwnProperty(..)` method?
+	The 'in' operator will check to see if the property is in the object, or if it exists at any higher level of the [[Prototype]] chain object traversal
+	'hasOwnProperty(..)' checks to see if only 'myObject' has the property or not, and will not consult the [[Prototype]] cahin
 
 `Object.keys(..)` returns...
+	an array of all enumerable properties
 
 `Object.getOwnPropertyNames(..)` returns...
+	an array of ALL properties, enumerable or not
 
 You can iterate over the values in data structures (arrays, objects, etc) using the ES6 _________________.
+	for..of loop syntax
 
+		for (var v of myArray) {
+							console.log( v );
+		}
 
 
 [Chapter 4]
 
 
 Define: Class
+	special functions that can be defined by class declarations and class expressions
+
+	neatly collected packaging of both the character data and the functionality
 
 Define: Inheritance
+	when a class uses the base definition from another class, it is "inherited"
 
 Define: Instantiation
+	making/creating the data to be used
 
 What does polymorphism describe?
+	the idea that a general behavior from a parent class can be overridden in a child class
 
 Does JS have classes?
+	No
 
-Instances of a class are constructed by a special method of the class, called a ______________
+Instances of a class are constructed by a special method of the class, called a ______________	 :	constructor
 
 True or False?:  A child class is linked to its parent class.
+	False
 
 Why does JS not automatically perform copy behavior when you "inherit" or "instantiate"?
+	There are no "classes" in JS, only objects, objects don't get copied, they get linked together. They are referenced
 
 Since JS functions can't really be duplicated, what do you end up with when you "copy" functions?
-
+	you end up with duplicated reference to the same shared function object. If you modified on of the shared function objects, both objects would be affected.
 
 
 
 [Chapter 5]
 
 Objects in JS have an internal property, [[Prototype]], which is...
+	A reference to another object.
 
 The [[Prototype]] chain is consulted when _____________________________
-
+	it cannot find the requested property on the object directly
 
 The top-end of every normal [[Prototype]] chain is the built-in ________________
-
+	object.prototype
 
 All functions by default, get a public, non-enumerable property on them called ______________, which points at _______________________________
+	prototype; an otherwise arbitrary object
 
-In JS, we don't make copies from one object to another.  Instead we ___________________________
+In JS, we don't make copies from one object to another.  Instead we ___________________________	: make links between objects
 
 The keyword `new` sort of hijacks any normal function and calls it in a fashion that constructs an ___________, in addition to _________________________________
+	object; whatever else it was going to do
 
-In JS, it's most appropriate to say that a "constructor" is _________________________________________________
+In JS, it's most appropriate to say that a "constructor" is _________________________________________________ : any function called with the 'new' keyword in front of it
 
 True or False:  .constructor means "was constructed by"
+	False
 
 What does `Object.create(..)` do?
+	creates a "new" object out of thin air, and links that new object's internal [[Prototype]] to the object you specify
 
 Define: Introspection
+	Inspecting an instance for its inheritance ancestry
 
-The `instanceof` operator takes a _________________ as it's left-hand operand and a _____________ as it's right-hand operand.
+The `instanceof` operator takes a _________________ as it's left-hand operand and a _____________ as it's right-hand operand. : plain object; function
 
 
 Consider:  `b.isPrototypeOf( c );`
 
 	What is the question that `isPrototypeOf(..)` answers?
-
+		In the entire [[Prototype]] chain of c, does b ever appear?
 
 We can use Object._________________ to directly retrieve the [[Prototype]] of an object.
-
+	.create
 
 
 [Chapter 6]
 
 What is the [[Prototype]] mechanism?
+	an internal link that exists on one object which references another object
 
 What is `super` used for?
+	to call to the base version of the method while adding more behavior to it
 
 Define: OLOO
+	objects-linked-to-other-objects
 
 Define:  Behavior Delegation
+	let some object provide a delegation for property or method references if not found on the object

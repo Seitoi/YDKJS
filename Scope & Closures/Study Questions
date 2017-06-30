@@ -30,7 +30,7 @@ If a variable cannot be found in the immediate scope, what does Engine do?
   Checks the next outer scope
 
 What does ReferenceError imply?
-  RHS look-up failed to find a varaible, anywhere in the nested scropes
+  RHS look-up failed to find a variable, anywhere in the nested scopes
 
 What does TypeError imply?
   Scope resolution was successful(finds the variable) but there was an illegal/impossible actions attempted
@@ -42,7 +42,7 @@ What are the two predominant models for how scope works?
   Dynamic scope
 
 What is lexical scope?
-  Based on where variables and blocks of scopes are authored, by you, at write time, and this is set in stone(mostly) by the time the lexer processess your code
+  Based on where variables and blocks of scopes are authored, by you, at write time, and this is set in stone(mostly) by the time the lexer processes your code
   Scope that is defined at a lexing time
 
 When does scope look-up stop?
